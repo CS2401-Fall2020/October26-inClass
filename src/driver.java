@@ -22,11 +22,11 @@ public class driver {
       System.out.print(i + ":" + root.depth(i) + ",");
     }
     System.out.println();
-    root.remove('a');
+    /*root.remove('a');
     System.out.println("After remove 'a': ");
     root.print();
-    root.remove('c');
-    System.out.println("After remove 'c': ");
-    root.print();
+    root.remove('f');
+    System.out.println("After remove 'f': ");
+    root.print();*/
   }
 }
