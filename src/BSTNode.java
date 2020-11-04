@@ -172,6 +172,59 @@ public class BSTNode {
     
   }
   
+  // returns true if the subtree is balanced
+  // false otherwise
+  public boolean isBalanced() {
+    int leftHeight = -1;
+    if(left != null) {
+      leftHeight = left.height();
+    }
+    int rightHeight = -1;
+    if(right != null) {
+      rightHeight = right.height();
+    }
+    // |leftHeight - rightHeight| > 1
+    if((leftHeight - rightHeight) > 1 || (rightHeight - leftHeight) > 1) {
+      return false;
+    }
+    
+    // return true if both children return true, false if either one is false
+    boolean rtn = true;
+    if(left != null && !left.isBalanced()) 
+      return false; //rtn = false;
+    if(right != null) rtn &= right.isBalanced();
+    return rtn;
+  }
+  
+  public String inOrderTraversal() {
+    String rtn = "";
+    
+    //base case
+    //if(left==null && right==null) return String.valueOf(value);
+    
+    if(left!=null)
+      rtn += left.inOrderTraversal();
+    if(!rtn.equals(""))
+      rtn += ", ";
+    rtn += value;
+    if(right!=null)
+      rtn += ", " + right.inOrderTraversal();
+    
+    return rtn;
+  }
+  
+  public String preOrderTraversal() {
+    String rtn = "";
+    
+    rtn += value;
+    if(left != null)
+      rtn += ", " + left.preOrderTraversal();
+    if(right != null)
+      rtn += ", " + right.preOrderTraversal();
+    
+    return rtn;
+  }
+  
   public String toString() {
     return String.valueOf(value);
   }

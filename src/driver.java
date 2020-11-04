@@ -11,6 +11,25 @@ public class driver {
     root.insert('e');
     root.insert('h');
     root.print();
+    System.out.println("Tree is Balanaced " + root.isBalanced());
+    
+    System.out.println("The inorder traversal is " + root.inOrderTraversal());
+    System.out.println("The preorder traversal is " + root.preOrderTraversal());
+    
+    
+    // do some stuff
+    root.remove('h');
+    root.remove('e');
+    root.remove('f');
+    
+    // we want this to be false
+    root.print();
+    System.out.println("Tree is Balanaced " + root.isBalanced());
+    System.out.println("The inorder traversal is " + root.inOrderTraversal());
+    System.out.println("The preorder traversal is " + root.preOrderTraversal());
+    
+    System.exit(0);
+    
     System.out.println("Height: " + root.height());
     System.out.print("Find: ");
     for(char i='a'-1; i<='i'; i++) {
