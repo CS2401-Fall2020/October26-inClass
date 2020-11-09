@@ -9,6 +9,7 @@ public class BSTNode {
     value = inVal;
   }
 
+  
   public boolean find(char inVal) {
     if(inVal == value) {
       return true;
